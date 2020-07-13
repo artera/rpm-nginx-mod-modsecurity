@@ -37,7 +37,7 @@ ModSecurity v3 Nginx Connector (module for nginx).
 
 %build
 cd %{_builddir}/nginx-%{_nginxver}
-./configure %(nginx -V 2>&1 | grep 'configure arguments' | sed -r 's@^[^:]+: @@') --add-dynamic-module=../%{_modname}-nginx-v%{version}
+./configure --with-compat --add-dynamic-module=../%{_modname}-nginx-v%{version}
 make modules
 
 %install
