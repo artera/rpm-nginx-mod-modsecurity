@@ -1,5 +1,5 @@
 rpmbuild_src = $(shell rpmbuild --eval '%{_sourcedir}')
-nginx_ver := 1.16.1
+nginx_ver := 1.20.1
 
 %.spec: %.spec.in
 	sed -e 's/@NGINXVER@/$(nginx_ver)/g' $< > $@
